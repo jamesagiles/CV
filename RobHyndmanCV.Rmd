@@ -1,16 +1,17 @@
 ---
-name: Rob J Hyndman
-address: "Department of Econometrics & Business Statistics,\\tabularnewline Monash University, VIC 3800, Australia."
-www: robjhyndman.com
-phone: +61 3 9905 5141
-email: "Rob.Hyndman@monash.edu"
-twitter: robjhyndman
-github: robjhyndman
+name: James A. Giles
+address: "Department of Neurology,\\tabularnewline Washington University School of Medicine,\\tabularnewline Campus Box 8111, St. Louis, MO 63110, United States"
+www: jamesagiles.com
+phone: +1 314 599-8624
+email: "jamesagiles@wustl.edu"
+twitter: neurogiles
+github: jamesagiles
 date: "`r format(Sys.Date(), '%B %Y')`"
-headcolor: "000088"
+headcolor: 000088
 csl: numeric-apa-cv.csl
 output: vitae::hyndman
 ---
+
 
 \newcounter{bib}
 
@@ -26,9 +27,6 @@ library(RefManageR)
 library(vitae)
 source("functions.R")
 
-# Update list of R packages I've coauthored
-source("R_packages.R")
-
 # Read any bib files
 pubs <- bibliography_entries("rjhpubs.bib")
 reports <- bibliography_entries("rjhreports.bib")
@@ -43,9 +41,9 @@ grants <- read_csv("Grant_income.csv")
 ```{r degrees, results='asis'}
 tribble(
     ~Degree, ~Institution, ~Year, 
-    "B.Sc.(Hons)", "University of Melbourne", 1988,
-    "Ph.D.", "University of Melbourne", 1992,
-    "A.Stat.", "Statistical Society of Australia", 2000
+    "MB ChB (Hons)", "Medicine", "University of Manchester", 2013,
+    "PhD", "Neuroscience", "University of Manchester", 2012,
+    "MPHS", "Population Health Sciences", "Washington University in St. Louis", 2020
   ) %>%
   baretable()
 ```
@@ -153,7 +151,6 @@ tribble(
   * My current research involves the analysis of large collections of time series, and includes visualization, forecasting, reconciliation, modelling and anomaly detection..
   * I currently supervise five PhD students and two post-doctoral research fellow. I have previously supervised another 27 PhD students and 3 Masters students.
   * I publish the [*Hyndsight*](https://robjhyndman.com/hyndsight) blog on research issues which receives an average of about 2000 pageviews per day.
-  * I have coauthored `r NROW(rjhpackages)` R packages as a result of my research (listed on pages \pageref{packagestart}--\pageref{packageend}). There have been over `r round(sum(rjhpackages$count, na.rm=TRUE)/1e6)` million downloads of my packages since 2015 (to `r format(Sys.time(), "%e %B %Y")`).
 
 # Public lectures
 
@@ -329,23 +326,4 @@ pubs %>%
   arrange(issued, author$family)
 ```
 \refstepcounter{bib}\label{papersend}
-
-## Statistical consulting reports
-\refstepcounter{bib}\label{consultingstart}
-
-```{r statistical-consulting}
-reports %>% arrange(issued, author$family)
-```
-
-\refstepcounter{bib}\label{consultingend}
-
-## Software (R packages)
-\refstepcounter{bib}\label{packagestart}
-
-```{r r-packages-list}
-# Sort R packages by title, then year.
-packages %>% arrange(id, issued)
-```
-
-\refstepcounter{bib}\label{packageend}
 
