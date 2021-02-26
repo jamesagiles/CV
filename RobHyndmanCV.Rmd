@@ -1,7 +1,6 @@
 ---
-name: James A. Giles
-address: "Department of Neurology,\\tabularnewline Washington University School of Medicine,\\tabularnewline Campus Box 8111, St. Louis, MO 63110, United States"
-www: jamesagiles.com
+name: James A. Giles, MB ChB (Hons) PhD
+address: "Department of Neurology, Stroke Section\\tabularnewline Washington University School of Medicine\\tabularnewline Campus Box 8111, St. Louis, MO 63110, United States"
 phone: +1 314 599-8624
 email: "jamesagiles@wustl.edu"
 twitter: neurogiles
@@ -40,10 +39,10 @@ grants <- read_csv("Grant_income.csv")
 
 ```{r degrees, results='asis'}
 tribble(
-    ~Degree, ~Institution, ~Year, 
-    "MB ChB (Hons)", "Medicine", "University of Manchester", 2013,
-    "PhD", "Neuroscience", "University of Manchester", 2012,
-    "MPHS", "Population Health Sciences", "Washington University in St. Louis", 2020
+    ~Degree, ~Subject, ~Institution, ~Year, 
+    "MB ChB (Hons)", "Medicine", "University of Manchester", "2005-2013",
+    "PhD", "Neuroscience", "University of Manchester", "2009-2012",
+    "MPHS", "Population Health Sciences", "Washington University in St. Louis", "2019-2020"
   ) %>%
   baretable()
 ```
