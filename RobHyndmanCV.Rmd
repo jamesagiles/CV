@@ -4,7 +4,6 @@ address: "Department of Neurology, Stroke Section\\tabularnewline Washington Uni
 phone: +1 314 599-8624
 email: "jamesagiles@wustl.edu"
 twitter: neurogiles
-github: jamesagiles
 date: "`r format(Sys.Date(), '%B %Y')`"
 headcolor: 000088
 csl: numeric-apa-cv.csl
